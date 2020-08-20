@@ -1,1 +1,1 @@
-**The extension has now been put on the Chrome Webstore. Please install it from there rather than from Github. https://chrome.google.com/webstore/detail/schoology-grade-displayer/fohekennbdoencfiapacpaghffdcejnb**
+
