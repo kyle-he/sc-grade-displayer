@@ -20,7 +20,6 @@ var click_count = 0;
 
 var popup_selected_course = null;
 
-
 class Course
 {
 	constructor(c, e)
@@ -236,9 +235,9 @@ document.getElementById("popup-calc-btn").addEventListener("click", function() {
 						error_elem.innerHTML = '';
 						d = parseFloat(d);
 						w = parseFloat(w);
-						console.log(d);
-						console.log(w);
-						console.log(c);
+						// console.log(d);
+						// console.log(w);
+						// console.log(c);
 						var final_grade = (d - c*(100.0 - w))/w;
 						var percent_str = roundTo((final_grade*100), 2) + "%";
 						if(final_grade > 1.10)
@@ -272,7 +271,7 @@ document.getElementById("popup-calc-btn").addEventListener("click", function() {
 for(var i = 0; i < courses.length; i++)
 {
 	course_inners = courses[i].childNodes[1].firstChild.firstChild.childNodes;
-	console.log("------------------");
+	// console.log("------------------");
 	course_title = courses[i].getElementsByClassName("gradebook-course-title");
 	var course_grades = courses[i].getElementsByClassName("gradebook-course-grades");
 	//validates existence of element
@@ -290,7 +289,7 @@ for(var i = 0; i < courses.length; i++)
 		course_title = "No Course Title"
 	}
 
-	console.log(course_title);
+	// console.log(course_title);
 
 	var c = new Course(course_title, courses[i]);
 	course_array.push(c);
@@ -377,8 +376,8 @@ for(var i = 0; i < courses.length; i++)
 				if(grade_given != -1)
 				{
 					grade_max = grade_max.split("/")[1].substring(1);
-					//console.log("\t\t" + "------------------");
-					//console.log("\t\t" + grade_given + "/" + grade_max);
+					//// console.log("\t\t" + "------------------");
+					//// console.log("\t\t" + grade_given + "/" + grade_max);
 					grade_given = parseFloat(grade_given);
 					grade_max = parseFloat(grade_max);
 					grade_date = grade_date.slice(grade_date.indexOf("</span>") + 7, grade_date.length);
@@ -403,8 +402,8 @@ for(var i = 0; i < courses.length; i++)
 					c.get_last_category().add_grade(grade_given, grade_max, grade_date, grade_name, grade_name_elem);
 					if(PRINT_VALS)
 					{
-						console.log("\t\t" + "------------------");
-						console.log("\t\t" + grade_given + " / " + grade_max);
+						// console.log("\t\t" + "------------------");
+						// console.log("\t\t" + grade_given + " / " + grade_max);
 					}
 				}
 
@@ -458,10 +457,10 @@ for(var i = 0; i < courses.length; i++)
 
 								reset_calcs();
 
-								console.log(cat_obj.grades);
-								console.log(this.innerHTML);
+								// console.log(cat_obj.grades);
+								// console.log(this.innerHTML);
 
-								console.log(this.getAttribute("arrpos"));
+								// console.log(this.getAttribute("arrpos"));
 								cat_obj.remove_grade(this.getAttribute("arrpos"));
 
 
@@ -516,8 +515,8 @@ for(var i = 0; i < courses.length; i++)
 					c.add_category(new_cat);
 					if(PRINT_VALS)
 					{
-						console.log("\t------------------");
-						console.log("\t" + cat_weight);
+						// console.log("\t------------------");
+						// console.log("\t" + cat_weight);
 					}
 				}
 			}
@@ -529,14 +528,14 @@ for(var i = 0; i < courses.length; i++)
 	{
 		display_changes(c, SHOW_OVERALL_GRADE);
 
-		console.log(c);
+		// console.log(c);
 
 		// display_rogerhub(c);
 	}
 
 }
 
-console.log(course_array);
+// console.log(course_array);
 
 init_popup();
 

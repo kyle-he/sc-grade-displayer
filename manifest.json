@@ -10,7 +10,7 @@
     "content_scripts": [{
         "css": ["main.css"],
         "matches": [
-            "https://*.schoology.org/grades/*",
+            "https://*.schoology.com/grades/grades"
         ],
         "js": ["content.js"]
     }],
